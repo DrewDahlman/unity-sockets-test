@@ -37,7 +37,6 @@ public class GameManager : MonoBehaviour
         GameObject go = GameObject.Find("SocketIO");
         socket = go.GetComponent<SocketIOComponent>();
         connectionUrl.text = "Connected to: " + socket.url;
-        print(socket.url);
 
         // Wait and join
         StartCoroutine("SayHello");
