@@ -1,5 +1,5 @@
 # unity-sockets-test
-Quick demo of sockets and unity
+Quick demo of sockets and unity. This is a quick prototype to test creating a custom socket server and connecting to it from unity.
 
 ## Requirements
 - Unity Version: 2018.2.18f
