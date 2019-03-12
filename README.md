@@ -5,6 +5,10 @@ Quick demo of sockets and unity. This is a quick prototype to test creating a cu
 - Unity Version: 2018.2.18f
 - Docker ( if you want to run local server )
 
+## Controls
+- arrow keys to move around
+- space to jump
+
 ## Running Unity
 - Open the project in Unity
 - Open the `SampleScene`
