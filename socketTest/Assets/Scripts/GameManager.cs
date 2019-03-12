@@ -26,6 +26,7 @@ public class GameManager : MonoBehaviour
     public JSONObject playerData;
     public GameObject mainCamera;
     public Text playerCount;
+    public Text connectionUrl;
     public RoomData room;
     public List<GameObject> others = new List<GameObject>();
 
@@ -35,6 +36,8 @@ public class GameManager : MonoBehaviour
         // Assign Socker
         GameObject go = GameObject.Find("SocketIO");
         socket = go.GetComponent<SocketIOComponent>();
+        connectionUrl.text = "Connected to: " + socket.url;
+        print(socket.url);
 
         // Wait and join
         StartCoroutine("SayHello");
