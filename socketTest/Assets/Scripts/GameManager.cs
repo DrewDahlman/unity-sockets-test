@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using SocketIO;
+using UnityEngine.UI;
 
 [System.Serializable]
 public class RoomData
@@ -24,6 +25,8 @@ public class GameManager : MonoBehaviour
     public GameObject newPlayer;
     public JSONObject playerData;
     public GameObject mainCamera;
+    public Text playerCount;
+    public RoomData room;
     public List<GameObject> others = new List<GameObject>();
 
     // Use this for initialization
@@ -52,7 +55,7 @@ public class GameManager : MonoBehaviour
     public void join(SocketIOEvent e)
     {
         // Get initial Room Data
-        RoomData room = RoomData.CreateFromJSON(e.data[0].ToString());
+        room = RoomData.CreateFromJSON(e.data[0].ToString());
 
         //  Check for player
         if (newPlayer == null)
@@ -111,7 +114,7 @@ public class GameManager : MonoBehaviour
 
     public void updateRoom(SocketIOEvent e)
     {
-        RoomData room = RoomData.CreateFromJSON(e.data[0].ToString());
+        room = RoomData.CreateFromJSON(e.data[0].ToString());
         for( int i = 0; i < room.players.Length; i++ )
         {
             PlayerInfo p = room.players[i];
@@ -123,6 +126,7 @@ public class GameManager : MonoBehaviour
                 po.transform.rotation = p.rotation;
             }
         }
+        updatePlayerCount();
     }
 
     public void removeUser(SocketIOEvent e)
@@ -137,4 +141,8 @@ public class GameManager : MonoBehaviour
         socket.OnDestroy();
     }
 
+    void updatePlayerCount()
+    {
+        playerCount.text = "Players: " + room.players.Length;
+    }
 }
