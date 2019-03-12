@@ -1,0 +1,12 @@
+version: '3'
+services:  
+  express:
+    build:
+      context: .
+      dockerfile: Docker/Dockerfile.server
+    ports:
+      - 3000:3000
+    volumes:
+      - ./:/app
+      - /app/node_modules
+    command: /bin/bash -c "npm start"
