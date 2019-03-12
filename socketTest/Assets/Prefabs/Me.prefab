@@ -22,8 +22,8 @@ GameObject:
   - component: {fileID: 33903765668014672}
   - component: {fileID: 23563218060798412}
   - component: {fileID: 65607561651683672}
-  - component: {fileID: 114748586114912974}
   - component: {fileID: 54728984747248958}
+  - component: {fileID: 114423501432504714}
   m_Layer: 0
   m_Name: Me
   m_TagString: Untagged
@@ -187,7 +187,7 @@ TextMesh:
   m_Color:
     serializedVersion: 2
     rgba: 4278190080
---- !u!114 &114748586114912974
+--- !u!114 &114423501432504714
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -201,10 +201,8 @@ MonoBehaviour:
   posY: 0
   posX: 0
   posZ: 0
-  nameBox: {fileID: 1562179106058624}
   playerName: 
-  position: {x: 0, y: 0, z: 0}
-  rotation: {x: 0, y: 0, z: 0, w: 0}
+  nameBox: {fileID: 1562179106058624}
 --- !u!224 &224218622820964566
 RectTransform:
   m_ObjectHideFlags: 1

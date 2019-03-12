@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class meController : MonoBehaviour {
+public class MeController : MonoBehaviour {
 
     public float posY;
     public float posX;
@@ -52,7 +52,7 @@ public class meController : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        if( other.gameObject.name == "Killbox")
+        if (other.gameObject.name == "Killbox")
         {
             posX = 0.0f;
             posY = 23.0f;
@@ -60,6 +60,7 @@ public class meController : MonoBehaviour {
 
             // Reset
             transform.position = new Vector3(posX, posY, posZ);
+        }
     }
 
     public JSONObject playerData

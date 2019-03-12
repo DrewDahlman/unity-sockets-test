@@ -60,7 +60,7 @@ public class GameManager : MonoBehaviour
 
             // Create player
             newPlayer = Instantiate(player, player.transform.position, player.transform.rotation);
-            playerData = newPlayer.GetComponent<meController>().playerData;
+            playerData = newPlayer.GetComponent<MeController>().playerData;
             mainCamera.GetComponent<CameraFollow>().target = newPlayer.transform;
 
             // Register player
@@ -105,7 +105,7 @@ public class GameManager : MonoBehaviour
     {
         if (newPlayer != null)
         {
-            socket.Emit("update", newPlayer.GetComponent<meController>().playerData);
+            socket.Emit("update", newPlayer.GetComponent<MeController>().playerData);
         }
     }
 
